@@ -1,3 +1,4 @@
+alert("Calculadora")
 var primeiro = Number(prompt("Digite aqui o primeiro número que você deseja:"))
 var operadores = Number(prompt("1- Somar \n2- Subtrair \n3- Multiplicar \n4- Dividir \n5- Porcentagem"))
 
