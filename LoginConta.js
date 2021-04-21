@@ -1,7 +1,7 @@
 var contas = []
 
 alert("Bem vindo ao 'Teste de Login'")
-alert("ATENÇÃO!!! \nPara acessar sua conta, é necessário criar a conta antes ... Gênio")
+alert("ATENÇÃO!!! \nPara acessar sua conta, é necessário criar a conta antes")
 
 const idadePermMin = 12
 const idadePermMax = 110
