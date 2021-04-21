@@ -7,7 +7,7 @@ var contas = [
     }
 ]
 
-alert("Bem vindo ao Banco ChurusBangos TudusBagos")
+alert("Bem vindo ao Banco TchurusBangu TudusBagos")
 
 apresentacao()
 
@@ -67,11 +67,11 @@ function login() { //MP 2
         }
 
         function menu() {
-            var opcao = Number(prompt("Serviços: \n\n1- Depositar \n2- Sacar \n3- Transferencia \n4- Consultar seu saldo atual \n5- Ver informações da conta \n6- Fechar"))
+            var opcao = Number(prompt("Serviços: \n\n1- Depositar \n2- Sacar \n3- Transferência \n4- Consultar seu saldo atual \n5- Ver informações da conta \n6- Fechar"))
 
             switch (opcao) {
                 case 1: //Depositar
-                    var deposito = Number(prompt("Insira o valor do depósito"))
+                    var deposito = parseFloat(prompt("Insira o valor do depósito"))
 
                     if (deposito > 0) {
                         contas[i].saldo = contas[i].saldo + deposito
@@ -85,7 +85,7 @@ function login() { //MP 2
                 break;
 
                 case 2: //Sacar
-                    var saque = Number(prompt("Insira o valor que você deseja sacar"))
+                    var saque = parseFloat(prompt("Insira o valor que você deseja sacar"))
 
                     if (saque <= contas[i].saldo) {
                         contas[i].saldo = contas[i].saldo - saque
@@ -106,7 +106,7 @@ function login() { //MP 2
                         if (nome == contas[j].nome) {
                             alert("Conta destino encontrada")
 
-                            var valor = Number(prompt("Insira o valor da transferencia"))
+                            var valor = parseFloat(prompt("Insira o valor da transferencia"))
 
                             if (valor <= contas[i].saldo) {
                                 contas[i].saldo = contas[i].saldo - valor
