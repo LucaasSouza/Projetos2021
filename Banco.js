@@ -17,18 +17,18 @@ function apresentacao() {
     switch (apresentacao) {
         case 1:
             novaConta()
-            break;
+        break;
 
         case 2:
             login()
-            break;
+        break;
 
         case 3:
-            break;
+        break;
 
         default:
             alert("Serviço não encontrado!")
-            break;
+        break;
     }
 }
 
@@ -95,39 +95,39 @@ function login() {
         switch (opcao) {
             case 1: //Depositar
                 deposito()
-                break;
+            break;
 
             case 2: //Sacar
                 saque()
-                break;
+            break;
 
             case 3: //Transferir
                 transferir()
-                break;
+            break;
 
             case 4: //Consultar saldo
                 alert("Seu saldo é de R$" + contas[i].saldo)
                 menu()
-                break;
+            break;
 
             case 5: //Informações da sua Conta
                 console.log(contas[i])
                 menu()
-                break;
+            break;
 
             case 6: //Sair
                 apresentacao()
-                break;
+            break;
 
             case 999:
                 console.log(contas)
                 menu()
-                break;
+            break;
 
             default:
                 alert("Informações não encontradas!")
                 apresentacao()
-                break;
+            break;
         }
 
         function deposito() {
@@ -173,13 +173,13 @@ function login() {
                     if (senhaT == contas[i].senha) {
                         alert("Acesso Permitido!")
 
-                        var nome = prompt("Insira o nome da conta destino")
+                        var nome = prompt("Insira o nome da conta destino:")
                         var flag = false
 
                         for (var j = 0; j < contas.length && flag == false; j++) {
                             if (nome == contas[j].nome) {
 
-                                var valor = parseFloat(prompt("Insira o valor da transferencia"))
+                                var valor = parseFloat(prompt("Insira o valor da transferencia:"))
 
                                 if (valor <= contas[i].saldo) {
                                     contas[i].saldo = contas[i].saldo - valor
