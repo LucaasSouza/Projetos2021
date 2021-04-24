@@ -67,19 +67,7 @@ function login() {
 
             } else {
                 alert("Senha incorreta!")
-            }
-
-            if (flag === false) {
-
-                senhaL = prompt("Digite sua senha para Login:")
-                if (senhaL == contas[i].senha) {
-                    flag = true;
-                    menu()
-
-                } else {
-                    alert("Senha incorreta!")
-                    apresentacao()
-                }
+                apresentacao()
             }
         }
     }
@@ -131,7 +119,7 @@ function login() {
         }
 
         function deposito() {
-            var deposito = parseFloat(prompt("Insira o valor do depósito"))
+            var deposito = parseFloat(prompt("Insira o valor do depósito:"))
 
             if (deposito > 0) {
                 contas[i].saldo = contas[i].saldo + deposito
@@ -145,7 +133,7 @@ function login() {
         }
 
         function saque() {
-            var saque = parseFloat(prompt("Insira o valor que você deseja sacar"))
+            var saque = parseFloat(prompt("Insira o valor que você deseja sacar:"))
 
             if (saque <= contas[i].saldo) {
                 contas[i].saldo = contas[i].saldo - saque
@@ -168,18 +156,18 @@ function login() {
                 if (nomeT == contas[i].nome) {
 
                     alert("Para garantirmos a sua segurança, coloque sua senha novamente para concluir esta ação:")
-                    var senhaT = prompt("Insira a sua senha: ")
+                    var senhaT = prompt("Insira a sua senha:")
 
                     if (senhaT == contas[i].senha) {
                         alert("Acesso Permitido!")
 
-                        var nome = prompt("Insira o nome da conta destino")
+                        var nome = prompt("Insira o nome da conta destino:")
                         var flag = false
 
                         for (var j = 0; j < contas.length && flag == false; j++) {
                             if (nome == contas[j].nome) {
 
-                                var valor = parseFloat(prompt("Insira o valor da transferencia"))
+                                var valor = parseFloat(prompt("Insira o valor da transferencia:"))
 
                                 if (valor <= contas[i].saldo) {
                                     contas[i].saldo = contas[i].saldo - valor
