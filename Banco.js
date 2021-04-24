@@ -17,18 +17,18 @@ function apresentacao() {
     switch (apresentacao) {
         case 1:
             novaConta()
-            break;
+        break;
 
         case 2:
             login()
-            break;
+        break;
 
         case 3:
-            break;
+        break;
 
         default:
             alert("Serviço não encontrado!")
-            break;
+        break;
     }
 }
 
@@ -95,39 +95,39 @@ function login() {
         switch (opcao) {
             case 1: //Depositar
                 deposito()
-                break;
+            break;
 
             case 2: //Sacar
                 saque()
-                break;
+            break;
 
             case 3: //Transferir
                 transferir()
-                break;
+            break;
 
             case 4: //Consultar saldo
                 alert("Seu saldo é de R$" + contas[i].saldo)
                 menu()
-                break;
+            break;
 
             case 5: //Informações da sua Conta
                 console.log(contas[i])
                 menu()
-                break;
+            break;
 
             case 6: //Sair
                 apresentacao()
-                break;
+            break;
 
             case 999:
                 console.log(contas)
                 menu()
-                break;
+            break;
 
             default:
                 alert("Informações não encontradas!")
                 apresentacao()
-                break;
+            break;
         }
 
         function deposito() {
