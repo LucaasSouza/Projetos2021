@@ -127,7 +127,7 @@ function login() {
 
                 menu()
             } else {
-                alert("Valor indisponível!")
+                alert("Valor indisponível! \n\nATENÇÃO: Não é possível depositar um valor menor que 0!")
                 menu()
             }
         }
@@ -141,7 +141,7 @@ function login() {
 
                 menu()
             } else {
-                alert("Valor indisponível!")
+                alert("Saldo indisponível!")
 
                 menu()
             }
