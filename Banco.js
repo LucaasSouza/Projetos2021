@@ -17,18 +17,18 @@ function apresentacao() {
     switch (apresentacao) {
         case 1:
             novaConta()
-        break;
+            break;
 
         case 2:
             login()
-        break;
+            break;
 
         case 3:
-        break;
+            break;
 
         default:
             alert("Serviço não encontrado!")
-        break;
+            break;
     }
 }
 
@@ -53,16 +53,16 @@ function novaConta() { //MP 1
 }
 
 function login() {
-    var flag = false
-    var nomeL = prompt("Digite seu nome para Login:")
+    var flag = false;
+    var nomeL = prompt("Digite seu nome para Login:");
 
     for (i = 0; i < contas.length && flag === false; i++) {
-        if (contas[i].nome == nomeL) {
+        if (nomeL == contas[i].nome) {
 
             var senhaL = prompt("Digite sua senha para Login:")
 
             if (senhaL == contas[i].senha) {
-                flag = true
+                flag = true;
                 menu()
 
             } else {
@@ -73,7 +73,7 @@ function login() {
 
                 senhaL = prompt("Digite sua senha para Login:")
                 if (senhaL == contas[i].senha) {
-                    flag = true
+                    flag = true;
                     menu()
 
                 } else {
@@ -95,39 +95,39 @@ function login() {
         switch (opcao) {
             case 1: //Depositar
                 deposito()
-            break;
+                break;
 
             case 2: //Sacar
                 saque()
-            break;
+                break;
 
             case 3: //Transferir
                 transferir()
-            break;
+                break;
 
             case 4: //Consultar saldo
                 alert("Seu saldo é de R$" + contas[i].saldo)
                 menu()
-            break;
+                break;
 
             case 5: //Informações da sua Conta
                 console.log(contas[i])
                 menu()
-            break;
+                break;
 
             case 6: //Sair
                 apresentacao()
-            break;
+                break;
 
             case 999:
                 console.log(contas)
                 menu()
-            break;
+                break;
 
             default:
                 alert("Informações não encontradas!")
                 apresentacao()
-            break;
+                break;
         }
 
         function deposito() {
@@ -161,6 +161,7 @@ function login() {
 
         function transferir() {
             alert("Para garantirmos a sua segurança, coloque seu nome novamente para concluir esta ação:")
+            var flag = false
             var nomeT = prompt("Insira o nome da sua conta:")
 
             for (var i = 0; i < contas.length; i++) {
@@ -176,8 +177,8 @@ function login() {
                         var flag = false
 
                         for (var j = 0; j < contas.length && flag == false; j++) {
-
                             if (nome == contas[j].nome) {
+
                                 var valor = parseFloat(prompt("Insira o valor da transferencia"))
 
                                 if (valor <= contas[i].saldo) {
@@ -187,8 +188,6 @@ function login() {
                                     flag = true
                                 } else {
                                     alert("Saldo insuficiente!")
-
-                                    flag = true
                                     menu()
                                 }
 
@@ -202,10 +201,6 @@ function login() {
                             }
                         }
                     }
-
-                } else {
-                    alert("Acesso Negado!")
-                    apresentacao()
                 }
             }
         }
