@@ -7,7 +7,7 @@ var contas = [
     },
 ]
 
-alert("Olá, Bem vindo(a) ao Banco TchurusBangu TudusBagos")
+alert("Bem vindo ao Banco TchurusBangu TudusBagos")
 
 apresentacao()
 
