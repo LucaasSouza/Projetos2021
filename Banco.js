@@ -55,13 +55,13 @@ function novaConta() { //MP 1
 function login() {
     var flag = false;
     var nomeL = prompt("Digite seu nome para Login:");
-    
+
     for (i = 0; i < contas.length && flag === false; i++) {
         if (contas[i].nome == nomeL) {
-            
-	    var senhaL = prompt("Digite sua senha para Login:")
-            
-	    if (senhaL == contas[i].senha) {
+
+            var senhaL = prompt("Digite sua senha para Login:")
+
+            if (senhaL == contas[i].senha) {
                 flag = true;
                 menu()
 
@@ -85,129 +85,129 @@ function login() {
     }
 
     if (flag == false) {
-        alert("*Usuário não encontrado*")
+        alert("Usuário não encontrado!")
         apresentacao()
     }
 
-        function menu() {
-            var opcao = Number(prompt("Serviços: \n\n1- Depositar \n2- Sacar \n3- Transferência \n4- Consultar seu saldo atual \n5- Ver informações da conta \n6- Fechar \n\n\n999"))
+    function menu() {
+        var opcao = Number(prompt("Serviços: \n\n1- Depositar \n2- Sacar \n3- Transferência \n4- Consultar seu saldo atual \n5- Ver informações da conta \n6- Fechar"))
 
-            switch(opcao){
-                case 1: //Depositar
-                    deposito()
-                break;
+        switch (opcao) {
+            case 1: //Depositar
+                deposito()
+            break;
 
-                case 2: //Sacar
-                    saque()
-                break;
+            case 2: //Sacar
+                saque()
+            break;
 
-                case 3: //Transferir
-                    transferir()
-                break;
+            case 3: //Transferir
+                transferir()
+            break;
 
-                case 4: //Consultar saldo
-                    alert("Seu saldo é de R$" + contas[i].saldo)
-                    menu()
-                break;
+            case 4: //Consultar saldo
+                alert("Seu saldo é de R$" + contas[i].saldo)
+                menu()
+            break;
 
-                case 5: //Informações da sua Conta
-                    console.log(contas[i])
-                    menu()
-                break;
+            case 5: //Informações da sua Conta
+                console.log(contas[i])
+                menu()
+            break;
 
-                case 6: //Sair
-                    apresentacao()
-                break;
+            case 6: //Sair
+                apresentacao()
+            break;
 
-                case 999:
-                    console.log(contas)
-                    menu()
-                break;
+            case 999:
+                console.log(contas)
+                menu()
+            break;
 
-                default:
-                    alert("Informações não encontradas!")
-                    apresentacao()
-                break;
+            default:
+                alert("Informações não encontradas!")
+                apresentacao()
+            break;
+        }
+
+        function deposito() {
+            var deposito = parseFloat(prompt("Insira o valor do depósito"))
+
+            if (deposito > 0) {
+                contas[i].saldo = contas[i].saldo + deposito
+                alert("Depósito efetuado com sucesso!")
+
+                menu()
+            } else {
+                alert("Valor indisponível!")
+                menu()
             }
         }
-    }
 
-function deposito() {
-    var deposito = parseFloat(prompt("Insira o valor do depósito"))
+        function saque() {
+            var saque = parseFloat(prompt("Insira o valor que você deseja sacar"))
 
-    if (deposito > 0) {
-        contas[i].saldo = contas[i].saldo + deposito
-        alert("Depósito efetuado com sucesso!")
+            if (saque <= contas[i].saldo) {
+                contas[i].saldo = contas[i].saldo - saque
+                alert("Saque efetuado com sucesso!")
 
-        menu()
-    } else {
-        alert("Valor indisponível!")
-        menu()
-    }
-}
+                menu()
+            } else {
+                alert("Valor indisponível!")
 
-function saque() {
-    var saque = parseFloat(prompt("Insira o valor que você deseja sacar"))
+                menu()
+            }
+        }
 
-    if (saque <= contas[i].saldo) {
-        contas[i].saldo = contas[i].saldo - saque
-        alert("Saque efetuado com sucesso!")
+        function transferir() {
+            alert("Para garantirmos a sua segurança, coloque seu nome novamente para concluir esta ação:")
+            var nomeT = prompt("Insira o nome da sua conta:")
 
-        menu()
-    } else {
-        alert("Valor indisponível!")
+            for (var i = 0; i < contas.length; i++) {
+                if (nomeT == contas[i].nome) {
 
-        menu()
-    }
-}
+                    alert("Para garantirmos a sua segurança, coloque sua senha novamente para concluir esta ação:")
+                    var senhaT = prompt("Insira a sua senha: ")
 
-function transferir() {
-    alert("Para garantirmos a sua segurança, coloque seu nome novamente para concluir esta ação:")
-    var nomeT = prompt("Insira o nome da sua conta:")
+                    if (senhaT == contas[i].senha) {
+                        alert("Acesso Permitido!")
 
-    for (var i = 0; i < contas.length; i++) {
-        if (nomeT == contas[i].nome) {
+                        var nome = prompt("Insira o nome da conta destino")
+                        var flag = false
 
-            alert("Para garantirmos a sua segurança, coloque sua senha novamente para concluir esta ação:")
-            var senhaT = prompt("Insira a sua senha: ")
+                        for (var j = 0; j < contas.length && flag == false; j++) {
 
-            if (senhaT == contas[i].senha) {
-                alert("Acesso Permitido!")
+                            if (nome == contas[j].nome) {
+                                var valor = parseFloat(prompt("Insira o valor da transferencia"))
 
-                var nome = prompt("Insira o nome da conta destino")
-                var flag = false
+                                if (valor <= contas[i].saldo) {
+                                    contas[i].saldo = contas[i].saldo - valor
+                                    contas[j].saldo = contas[j].saldo + valor
 
-                for (var j = 0; j < contas.length && flag == false; j++) {
+                                    flag = true
+                                } else {
+                                    alert("Saldo insuficiente!")
 
-                    if (nome == contas[j].nome) {
-                        var valor = parseFloat(prompt("Insira o valor da transferencia"))
+                                    flag = true
+                                    menu()
+                                }
 
-                        if (valor <= contas[i].saldo) {
-                            contas[i].saldo = contas[i].saldo - valor
-                            contas[j].saldo = contas[j].saldo + valor
-
-                            flag = true
-                        } else {
-                            alert("Saldo insuficiente!")
-
-                            flag = true
-                            menu()
-                        }
-
-                        if (flag == true) {
-                            alert("Transferência concluída!")
-                            menu()
-                        } else {
-                            alert("Conta não encontrada!")
-                            menu()
+                                if (flag == true) {
+                                    alert("Transferência concluída!")
+                                    menu()
+                                } else {
+                                    alert("Conta não encontrada!")
+                                    menu()
+                                }
+                            }
                         }
                     }
+
+                } else {
+                    alert("Acesso Negado!")
+                    apresentacao()
                 }
             }
-
-        } else {
-            alert("Acesso Negado!")
-            apresentacao()
         }
     }
 }
