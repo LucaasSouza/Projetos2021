@@ -53,8 +53,8 @@ function novaConta() { //MP 1
 }
 
 function login() {
-    var flag = false;
-    var nomeL = prompt("Digite seu nome para Login:");
+    var flag = false
+    var nomeL = prompt("Digite seu nome para Login:")
 
     for (i = 0; i < contas.length && flag === false; i++) {
         if (contas[i].nome == nomeL) {
@@ -62,7 +62,7 @@ function login() {
             var senhaL = prompt("Digite sua senha para Login:")
 
             if (senhaL == contas[i].senha) {
-                flag = true;
+                flag = true
                 menu()
 
             } else {
@@ -73,7 +73,7 @@ function login() {
 
                 senhaL = prompt("Digite sua senha para Login:")
                 if (senhaL == contas[i].senha) {
-                    flag = true;
+                    flag = true
                     menu()
 
                 } else {
