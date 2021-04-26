@@ -66,9 +66,9 @@ console.log("Lista Geral")
 console.log(listaP1)
 
 console.log("Ranking:")
-console.log("O primeiro lugar é do: " + listaP1[0].jogador1)
-console.log("O primeiro lugar é do: " + listaP1[1].jogador1)
-console.log("O primeiro lugar é do: " + listaP1[2].jogador1)
+console.log("O primeiro lugar é do(a): " + listaP1[0].jogador1)
+console.log("O primeiro lugar é do(a): " + listaP1[1].jogador1)
+console.log("O primeiro lugar é do(a): " + listaP1[2].jogador1)
 
 //----------------------------------------------------------
 //Com Bot
