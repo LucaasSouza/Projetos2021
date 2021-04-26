@@ -1,6 +1,6 @@
 alert("ATENÇÃO: Jogue com o console do seu navegador aberto para ver informações adicionais!")
 
-var escolha = Number(prompt("Qual modo de jogo você deseja jogar? \n1- Sem bot 2- Com bot"))
+var escolha = Number(prompt("Qual modo de jogo você deseja jogar? \n1- Sem bot   2- Com bot"))
 
 switch (escolha) {
 	case 1://Sem Bot
